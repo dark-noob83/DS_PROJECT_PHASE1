@@ -25,23 +25,29 @@ def tf_idf_sentence(file_name):
         lines = f.readlines()
         word_index = word_map(file_name=file_name)
         i = 0
-        vector_sentence = [None] * (len(lines))
+        sentence_vector = [None] * (len(lines))
 
         for line in lines:
             vector = [0] * (list(word_index.values())[-1] + 1)
             for word in line.split():
                 index = word_index[tokenizer(word)]
                 vector[index] += 1
-            vector_sentence[i] = vector
+            sentence_vector[i] = vector
             i += 1
-        return vector_sentence
+        return sentence_vector
 
 
-# vectors = [0] * 50001
-# for i in range(0, 10):
-#     vectors[i] = tf_idf(i)
+# second piece
+def tf_idf(sentence_vector):
+    vector = [0] * len(sentence_vector[0])
+    for paragraph in sentence_vector:
+        for i in range(len(paragraph)):
+            vector[i] += paragraph[i]
+    return vector
 
-# print(vectors)
-# for i in range(0, 10):
-#     tf_idf(i)
-print(tf_idf_sentence(0))
+
+vectors = [0] * 50001
+for i in range(0, 10):
+    s_v = tf_idf_sentence(i)
+    vectors[i] = tf_idf(s_v)
+print(vectors)
