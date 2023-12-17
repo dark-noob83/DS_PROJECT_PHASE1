@@ -1,0 +1,8 @@
+Simple Harmonic Motion. Simple harmonic motion is typified by the motion of a mass on a spring when it is subject to the linear elastic restoring force given by Hooke's Law. The motion is sinusoidal in time and demonstrates a single resonant frequency.
+1 Simple harmonic motion occurs when the force F acting on an object is directly proportional to the displacement x of the object, but in the opposite direction.
+The frequencies of the various harmonics are multiples of the frequency of the first harmonic. Each harmonic frequency (fn) is given by the equation fn = n • f1 where n is the harmonic number and f1 is the frequency of the first harmonic. f 3 = 3 • f 1 = 3600 Hz.
+A harmonic is a signal or wave whose frequency is an integral (whole-number) multiple of the frequency of some reference signal or wave. The term can also refer to the ratio of the frequency of such a signal or wave to the frequency of th
+1 Definition of Simple Harmonic Motion. 2  Simple harmonic motion occurs when the force F acting on an object is directly proportional to the displacement x of the object, but in the opposite direction.
+harmonic motion. n. 1. (General Physics) a periodic motion in which the displacement is symmetrical about a point or a periodic motion that is composed of such motions.
+Simple harmonic motion is any motion where a restoring force is applied that is proportional to the displacement and in the opposite direction of that displacement.
+Simple harmonic motion is typified by the motion of a mass on a spring when it is subject to the linear elastic restoring force given by Hooke's Law. The motion is sinusoidal in time and demonstrates a single resonant frequency.

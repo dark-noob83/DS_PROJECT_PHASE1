@@ -1,0 +1,8 @@
+RNA polymerase (RNAP) is an information-processing molecular machine that copies DNA into RNA. It is a multi-subunit complex found in every living organism. Bacterial RNAP contains six subunits (ββ’α2ωσ).
+Description. The core of the bacterial RNA polymerase (RNAP) consists of four subunits, two alpha, a beta and a beta', which are conserved from bacteria to mammals.
+Binding of NusA to RNA in the presence of alpha or N involves an amino-terminal S1 homology region that is otherwise inactive in full-length NusA. The interaction of the alpha-CTD with full-length NusA stimulates termination.
+The alpha subunit (RpoA) initiates RNAP assembly by dimerising to form a platform on which the beta subunits can interact. The alpha subunit consists of a N-terminal domain (NTD) and a C-terminal domain (CTD), connected by a short linker.
+None. The core of the bacterial RNA polymerase (RNAP) consists of four subunits, two alpha, a beta and a beta', which are conserved from bacteria to mammals.
+Core RNA polymerase (RNAP) (in bacteria, a complex composed of an α-dimer, a β-subunit, a β′-subunit and an ω-subunit) is bound to the DNA duplex composed of the template strand (black) and the non-template strand (blue), and the nascent RNA (red).
+Introduction to RNAP. RNA polymerase (RNAP) is a molecular machine that copies DNA into RNA and is found in every living organism. The bacterial RNAP complex consists of six subunits (ββ’α2ωσ) and three channels. RNAP initially binds to DNA at the promoter, forming the closed complex.
+Bacterial RNA polymerase holoenzyme. Transcription in all cellular organisms is driven by a complex, multi-subunit and multi-functional enzyme, the DNA dependent RNA polymerase (RNAp). Bacterial RNAp consists of five subunits.

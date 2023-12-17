@@ -1,0 +1,8 @@
+In Photoshop CS3, Adobe introduced the Refine Edge command, offering us a first glimpse of how much easier it could be to select hair, fur and other fine details in an image.
+1. Select Your View. First, make your selection, then hit Refine Edge in the tool properties bar. This is where the magic happens! You'll see a little preview thumbnail in the view panel, and your main image should become just like it. You can click the thumbnail to change the view type.
+The Quick Selection tool in photoshop is great for making simple selections fast, then you can tidy up the selection using the Refine Edge controls. Now you can use the Refine Edge tool to draw along the edges of the selection.
+The new Refine Edge tools in Photoshop CS5 will assist users in making difficult selections, like selecting the hair of a subject.
+Select specific, detailed portions of a photo using the various selection tools in Photoshop Elements. Explore how the Refine Selection Brush tool and the Refine Edge feature help you set up fine-tuned selections, for example, hair.
+How to use the Refine Edge tool in Photoshop. The refine edge tool in photoshop is great for selecting hair when removing the background of an image OR just selecting certain areas of an image. Subscribe For More Here:
+Learn how to use the Quick Select tool and the Refine Edge tool to select complex soft-edged objects. Applies to the CC and CS6 versions of Photoshop.
+The Refine Edge tool in Photoshop is a powerful feature that will help you to create more accurate selections, particularly with objects with complex edges.

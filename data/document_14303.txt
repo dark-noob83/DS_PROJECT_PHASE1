@@ -1,0 +1,4 @@
+Cerebral perfusion pressure, or CPP, is the net pressure gradient causing cerebral blood flow to the brain (brain perfusion).
+Computed tomography (CT) perfusion imaging shows which areas of the brain are supplied or perfused adequately with blood and provides detailed information on delivery of blood or blood flow to the brain. CT perfusion scanning is a noninvasive medical test that helps physicians diagnose and treat medical conditions.
+cerebral perfusion pressure (CPP), a parameter that is related to the amount of blood flow to the brain. It is calculated by subtracting the intracranial pressure from the mean systemic arterial blood pressure. 1  Facebook.
+Cerebral Perfusion Pressure. Cerebral Perfusion Pressure (CPP) is defined as the difference between the Mean Arterial Pressure (MAP) and the Intracranial Pressure (ICP). CPP = MAP-ICP. This represents the pressure gradient driving cerebral blood flow (CBF) and hence oxygen and metabolite delivery.

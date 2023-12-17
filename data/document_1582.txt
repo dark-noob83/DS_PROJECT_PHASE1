@@ -1,0 +1,8 @@
+Identification. In electrical engineering, an armature is classified as the part of an alternator, motor or generator that produces power. In mechanical engineering, the armature is either the rotating or static component of a motor, alternator or generator.
+1. DC Motor Overview. The armature and field in a DC motor can be wired three different ways to provide varying amounts of torque or different types of speed control. The armature and field windings are designed slightly differently for different types of DC motors.
+An armature is made of wire coiled around a metal core. An electric current is produced in this metal core that interacts with an input current to produce torque, the mechanism that causes a vehicle to accelerate.
+Definition of ARMATURE for Kids. : the part of an electric motor or generator that turns in a magnetic field.
+Noun. 1. armature-coil in which voltage is induced by motion through a magnetic field. coil-reactor consisting of a spiral of insulated wire that introduces inductance into a circuit. electric motor-a motor that converts electricity to mechanical work.
+The armature takes the place of the nail in an electric motor. The armature is an electromagnet made by coiling thin wire around two or more poles of a metal core. The armature has an axle, and the commutator is attached to the axle.
+armature. n. 1. (General Physics) a revolving structure in an electric motor or generator, wound with the coils that carry the current. 2. (General Physics) any part of an electric machine or device that moves under the influence of a magnetic field or within which an electromotive force is induced.
+An armature in a motor is defined as rotating part of a motor that emits electric energy into a magnetic field. Other People Are Reading.

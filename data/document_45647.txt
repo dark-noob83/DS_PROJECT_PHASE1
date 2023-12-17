@@ -1,0 +1,8 @@
+in the problem above we found the median of a set of 5 numbers definition the median of a set of data is the middlemost number in the set the median is also the number that is halfway into the set
+arithmetic median definition median is the middle value of the given numbers or distribution in their ascending order median is the average value of the two middle elements when the size of the distribution is even
+to find the median your numbers have to be listed in numerical order so you may have to rewrite your list first the mode is the value that occurs most often if no number is repeated then there is no mode for the list the range is just the difference between the largest and smallest values
+medians of a triangle from latin medianus of the middle a median of a triangle is a line segment joining a vertex to the midpoint of the opposite side a triangle therefore has three medians
+definition of median of a triangle median of a triangle is a line segment joining a vertex of the triangle to the midpoint of the opposite side
+just remember the following mean regular meaning of average median middle value mode most often in the above i ve used the term average rather casually the technical definition of average is the arithmetic mean adding up the values and then dividing by the number of values
+the median of a set of numbers is the number in the middle for example in the set of numbers 4 6 25 the median is 6 however the numbers must be in order for the median to be
+to find the median the data should first be arranged in order from least to greatest to remember the definition of a median just think of the median of a road which is the middlemost part of the road in the problem above 12 is the median it is the number that is halfway into the set

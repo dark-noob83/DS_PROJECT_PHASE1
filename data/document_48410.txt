@@ -1,0 +1,8 @@
+Lambda, the 11th letter of the Greek alphabet, is the symbol for wavelength. In optical fiber networking, the word lambda is used to refer to an individual optical
+Light is Absorbed by Electrons. Electrons in atoms and molecules move around the nucleus in regions called orbitals or energy levels. An electron can move up to the next level if it is given the exact amount of energy required to be in the next level. Light can provide that energy.
+Lambda (uppercase λ, lowercase λ; Greek: λάμ(β)δα lam(b)da) is the 11th letter of the Greek alphabet. In the system of Greek numerals lambda has a value of 30. Lambda is related to the Phoenician letter Lamed. Letters in other alphabets that stemmed from lambda include the Latin L and the Cyrillic letter El (л, л).
+The same as for any particle absorbing electromagnetic radiation: the wavelength at which the largest amount of absorption occurs.
+if the protein is colorless then it is quite tough to calculate the lambda max or absorption maxima directly (still you can check it by absorbtion maxima calculation/experiment).
+Lambda Max in the UV. Most solutions also do absorb, or solely absorb, ultraviolet (UV) light. The wavelengths most strongly absorbed typically occur in the UV. Often people refer to absorbance peaks of visible light as lambda max even when a stronger peak may occur in the UV region.
+Lambda max is the wavelength at which the maximum fraction of light is absorbed by a solution. Lambda (λ) is a Greek......
+Image by Flickr.com, courtesy of Wonker. Lambda max is the wavelength at which the maximum fraction of light is absorbed by a solution. Lambda (λ) is a Greek letter that scientists use as the symbol for wavelength.

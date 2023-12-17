@@ -1,0 +1,5 @@
+cryptography, cryptology. 1. the science or study of secret writing, especially codes and ciphers. 2. the procedures and methods of making and using codes and ciphers. — cryptographer, cryptographist, n. — cryptographic, adj. 1. the study of, or the use of, methods and procedures for translating and interpreting codes and ciphers; cryptanalysis. 2. cryptography.
+Full Definition of CRYPTOGRAPHY. 1. : secret writing. 2. : the enciphering and deciphering of messages in secret code or cipher; also: the computerized encoding and decoding of information. 3. : cryptanalysis.
+cryptography. 1. the science or study of secret writing, especially code and cipher systems. 2. the procedures and methods of making and using secret languages, as codes or ciphers.
+: the scientific study of cryptography and cryptanalysis.
+Definition of:cryptography. The conversion of data into a secret code for transmission over a public network. Today, most cryptography is digital, and the original text (plaintext) is turned into a coded equivalent called ciphertext via an encryption algorithm. The ciphertext is decrypted at the receiving end and turned back into plaintext.

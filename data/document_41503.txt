@@ -1,0 +1,5 @@
+: an arrangement of statistical data that exhibits the frequency of the occurrence of the values of a variable.
+Definition of FREQUENCY DISTRIBUTION. : an arrangement of statistical data that exhibits the frequency of the occurrence of the values of a variable. See frequency distribution defined for kids. ADVERTISEMENT.
+DEFINITION of 'Frequency Distribution'. A representation, either in a graphical or tabular format, which displays the number of observations within a given interval. The intervals must be mutually exclusive and exhaustive.
+Definition: a frequency table is generally used to display a frequency distribution. The frequency distribution shows the total number of occurrences withing a given boundary. Example of a frequency distribution: Frequency Distribution: Calories of a beverage. Calories. Frequency. 151-160. 10. 161-170.
+For example, the frequency distribution of income in a population would show how many individuals (or households) have the income of a certain level (say, $5,000 a month). It is plotted either as a step-column chart (histogram) or as a line-chart (histograph).
