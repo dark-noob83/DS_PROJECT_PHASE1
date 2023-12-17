@@ -19,23 +19,29 @@ def word_map(file_name):
         return word_index
 
 
-def tf_idf(file_name):
+# first piece
+def tf_idf_sentence(file_name):
     with open(f"./data/document_{file_name}.txt", encoding="utf-8") as f:
         lines = f.readlines()
         word_index = word_map(file_name=file_name)
-        vector = [0] * (list(word_index.values())[-1] + 1)
+        i = 0
+        vector_sentence = [None] * (len(lines))
 
         for line in lines:
+            vector = [0] * (list(word_index.values())[-1] + 1)
             for word in line.split():
                 index = word_index[tokenizer(word)]
                 vector[index] += 1
-        return vector
+            vector_sentence[i] = vector
+            i += 1
+        return vector_sentence
 
 
-vectors = [0] * 50001
-for i in range(0, 10):
-    vectors[i] = tf_idf(i)
+# vectors = [0] * 50001
+# for i in range(0, 10):
+#     vectors[i] = tf_idf(i)
 
-print(vectors)
+# print(vectors)
 # for i in range(0, 10):
 #     tf_idf(i)
+print(tf_idf_sentence(0))
