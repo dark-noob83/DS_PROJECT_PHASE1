@@ -1,5 +1,4 @@
 import json
-from tqdm import tqdm
 
 
 def tokenizer(text):
@@ -7,7 +6,6 @@ def tokenizer(text):
     return text
 
 
-## for unique words
 unique_word = {}
 i = 0
 for document_number in range(0, 50001):
@@ -58,8 +56,7 @@ def Df(selected_word):
 
 
 m = {1, 2, 3}
-print(1 in m)
-# unique_words_df = {}
+print(1 in m)  # unique_words_df = {}
 # for key in tqdm(list(unique_words.keys())):
 #     unique_words_df[key] = Df(key)
 
