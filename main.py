@@ -1,3 +1,5 @@
+
+
 import json
 from tqdm import tqdm
 
@@ -5,6 +7,8 @@ from tqdm import tqdm
 def tokenizer(text):
     text = text.lower()
     return text
+
+
 ## for unique words
 unique_word = {}
 i = 0
@@ -31,6 +35,8 @@ with open("./unique_words.json", "w") as myfile:
 
 with open("./unique_words.json") as fp:
     unique_words = json.load(fp)
+
+
 ### calculate tf
 def Tf(selected_word, paragraph):
     tf = 0
@@ -48,7 +54,8 @@ def Df(selected_word):
             lines = f.readlines()
             for line in lines:
                 if selected_word in line.lower():
-                    df += 1  
+                    df += 1
+                    break
     return df
 
 
