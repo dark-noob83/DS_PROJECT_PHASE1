@@ -1,13 +1,14 @@
+import difflib
 import json
 import math
 import string
-import difflib
+
 import numpy as np
 # nltk.download()
 from nltk.corpus import stopwords
 from nltk.tokenize import TweetTokenizer
 
-
+# tokenizer
 def tokenizer(text, tokenizer=TweetTokenizer()):
     text = text.lower()
     tokens = tokenizer.tokenize(text)
@@ -15,7 +16,8 @@ def tokenizer(text, tokenizer=TweetTokenizer()):
     stopword_list = stopwords.words('english') + punct + ['rt', 'via', '...', '“', '”', '’']
     return [tok.strip("#") for tok in tokens if tok not in stopword_list and not tok.isdigit()]
 
-
+#find and save unique word into json
+# df of unique word
 def save_unique_words():
     unique_word = {}
     i = 0
@@ -40,7 +42,7 @@ def save_unique_words():
     with open("./unique_words.json", "w") as myfile:
         json.dump(unique_word, myfile)
 
-
+# tf
 def Tf(selected_word, splited_paragraph, ):
     tf = 0
     for word in splited_paragraph:
@@ -48,7 +50,7 @@ def Tf(selected_word, splited_paragraph, ):
             tf += 1
     return tf
 
-
+#paragraph number
 def p_number():
     paragraph_numbers = 0
 
@@ -60,7 +62,7 @@ def p_number():
 
     return paragraph_numbers
 
-
+#save paragraph tokenizer in json
 def save_tokenizer():
     for document_number in range(0, 50001):
         d_paragraph_token = {}
@@ -73,10 +75,11 @@ def save_tokenizer():
             with open(f"./tokenizer/{document_number}.json", "w") as myfile:
                 json.dump(d_paragraph_token, myfile)
 
-
+# tf idf
 def Tf_Idf(splited_paragraph, last_index, unique_words, paragraph_number):
     vector = [0] * (last_index + 1)
     for word in splited_paragraph:
+        word = correct_spelling(word, unique_words)
         tf = Tf(word, splited_paragraph)
         index = unique_words[word]['index']
         df = unique_words[word]['paragraph']
@@ -85,7 +88,7 @@ def Tf_Idf(splited_paragraph, last_index, unique_words, paragraph_number):
         vector[index] = tf_idf
     return np.array(vector)
 
-
+# save tf idf of documents
 def save_tf_idf():
     paragraph_number = p_number()
     with open("./unique_words.json") as fp:
@@ -105,7 +108,7 @@ def save_tf_idf():
             with open(f"./Tf_idf's/{document_number}.txt", mode='w', encoding="utf-8") as f1:
                 f1.write(str(document_vector))
 
-
+# cosine similarity
 def cosine_similarity(query_vector, document_vector):
     numerator = np.dot(query_vector, document_vector)
     query_norm = np.linalg.norm(query_vector)
@@ -114,7 +117,7 @@ def cosine_similarity(query_vector, document_vector):
     cosine = numerator / denominator
     return cosine
 
-
+# return best document for query
 def select_document(query, candidate_document):
     paragraph_number = p_number()
     with open("./unique_words.json") as fp:
@@ -122,9 +125,8 @@ def select_document(query, candidate_document):
     last_index = list(unique_words.values())[-1]['index']
     cosines = []
     query_tokenized = tokenizer(query)
-    # print(query_tokenized)
-    try:
-        query_tf_idf = Tf_Idf(query_tokenized, last_index, unique_words, paragraph_number)
+
+    query_tf_idf = Tf_Idf(query_tokenized, last_index, unique_words, paragraph_number)
 
     for document_name in candidate_document:
         with open(f"./Tf_idf's/{document_name}.txt", encoding='utf-8') as f:
@@ -134,24 +136,35 @@ def select_document(query, candidate_document):
             document_tf_idf = np.array(splited_line, dtype='float64')
             cosine = cosine_similarity(query_tf_idf, document_tf_idf)
             cosines.append({'cosine': cosine, 'document': document_name})
-    # print(cosines)
+    print(cosines)
     return max(cosines, key=lambda x: x['cosine'])
 
+# print best document for query
+def print_document(index):
+    with open("./data.json") as fp:
+        data_form = json.load(fp)
 
-with open("./data.json") as fp:
-    data_form = json.load(fp)
+    query = data_form[index]['query']
+    candidate_document = data_form[index]['candidate_documents_id']
+    query = 'Results-Based Accountability is a disciplined way of thinking and taking action that communities can use to improve the lives of children, youth, families, adults and the community as a whole.'
+    c = None
+    if '.' in query or ',' in query:
+        for (index, i) in enumerate(query):
+            if i == '.' or i == ',':
+                if not query[index - 1].isdigit():
+                    a = query[:index + 1]
+                    b = query[index + 1:]
+                    c = a + ' ' + b
+    if c:
+        query = c
+    print(select_document(query, candidate_document))
+
+# for mistake spelling
+def correct_spelling(word, word_list):
+    closest_match = difflib.get_close_matches(word, word_list, n=1, cutoff=0.8)
+    if closest_match:
+        return closest_match[0]
+    return word
 
 
-
-query = data_form[6]['query']
-a = "higher.domestically"
-b = "higher"
-s = difflib.SequenceMatcher(None, a,b)
-for tag, i1, i2, j1, j2 in s.get_opcodes():
-    print(a[i1:i2]==b)
-#
-# for (i , index) in enumerate(query):
-#     if(i == '.'):
-
-# candidate_document = data_form[6]['candidate_documents_id']
-# print(select_document(query, candidate_document))
+# print_document(0)
