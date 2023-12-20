@@ -146,7 +146,6 @@ def print_document(index):
 
     query = data_form[index]['query']
     candidate_document = data_form[index]['candidate_documents_id']
-    query = 'Results-Based Accountability is a disciplined way of thinking and taking action that communities can use to improve the lives of children, youth, families, adults and the community as a whole.'
     c = None
     if '.' in query or ',' in query:
         for (index, i) in enumerate(query):
