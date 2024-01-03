@@ -6,6 +6,9 @@ import string
 import numpy as np
 from nltk.corpus import stopwords
 from nltk.tokenize import TweetTokenizer
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 # tokenizer
@@ -209,7 +212,7 @@ def print_most_repeated(document_name):
         print(most_repeated['word'])
 
 
-# return top five most important
+# get most important
 
 def get_most_important(document_name, unique_words):
     document_tf_idf = get_document_tf_idf(document_name)
@@ -220,15 +223,57 @@ def get_most_important(document_name, unique_words):
         word = keys[index]
         tf_idfs.append({'word': word, 'tf_idf': word_tf_idf})
     sorted_list = sorted(tf_idfs, key=lambda x: x['tf_idf'], reverse=True)
-    return sorted_list[:5]
+    return sorted_list[0]
 
 
-# print top five most important
-def print_most_important(document_name):
+# return most important
+def most_important(document_name):
     with open("./unique_words.json") as fp:
         unique_words = json.load(fp)
-    for most_important in get_most_important(document_name, unique_words):
-        print(most_important['word'])
+    important = get_most_important(document_name, unique_words)
+    return (important['word'])
 
+# reduce dimension
+def dimension_reduction(documents_tf_idf):
+    pca = PCA(n_components=2)
+    transform = pca.fit_transform(documents_tf_idf)
+    return transform
 
-print_most_important(0)
+#save_2d_array in txt file of 1000 doc
+def save_2d_tf_idf():
+    documents_tf_idf = []
+    for document_name in range(0, 1000):
+        print(document_name)
+        documents_tf_idf += [get_document_tf_idf(document_name)]
+    documents_tf_idf = np.array(documents_tf_idf, dtype='float64')
+    transform_data = list(dimension_reduction(documents_tf_idf))
+    with open(f"./2d_tf_idf.txt", mode='w', encoding="utf-8") as f1:
+        f1.write(str(transform_data))
+
+#clustering 1000 doc
+def clustering_tf_idf():
+    words = []
+    for document_name in range(0, 1000):
+        most = most_important(document_name)
+        words += [most]
+    vectorizer = TfidfVectorizer()
+    X = vectorizer.fit_transform(words)
+    most_important_cluster={}
+    num_clusters = 7
+    model = KMeans(n_clusters=num_clusters)
+    model.fit(X)
+    clusters = model.labels_
+    for i, word in enumerate(words):
+        if word not in most_important_cluster:
+            most_important_cluster[word] = int(clusters[i])
+
+    return most_important_cluster
+#save clustering of 1000 doc in json
+def save_most_important_cluster():
+    most_important_cluster = clustering_tf_idf()
+    print(most_important_cluster)
+    with open(f"./most_important_clustering.json", "w") as myfile:
+        json.dump(most_important_cluster, myfile)
+
+save_most_important_cluster()
+
