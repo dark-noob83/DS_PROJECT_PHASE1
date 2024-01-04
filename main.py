@@ -3,6 +3,7 @@ import json
 import math
 import string
 
+import matplotlib.pyplot as plt
 import numpy as np
 from nltk.corpus import stopwords
 from nltk.tokenize import TweetTokenizer
@@ -233,13 +234,18 @@ def most_important(document_name):
     important = get_most_important(document_name, unique_words)
     return (important['word'])
 
+
+#######################################################################################################
+##################  part 2   ##################
+
 # reduce dimension
 def dimension_reduction(documents_tf_idf):
     pca = PCA(n_components=2)
     transform = pca.fit_transform(documents_tf_idf)
     return transform
 
-#save_2d_array in txt file of 1000 doc
+
+# save_2d_array in txt file of 1000 doc
 def save_2d_tf_idf():
     documents_tf_idf = []
     for document_name in range(0, 1000):
@@ -247,10 +253,15 @@ def save_2d_tf_idf():
         documents_tf_idf += [get_document_tf_idf(document_name)]
     documents_tf_idf = np.array(documents_tf_idf, dtype='float64')
     transform_data = list(dimension_reduction(documents_tf_idf))
-    with open(f"./2d_tf_idf.txt", mode='w', encoding="utf-8") as f1:
-        f1.write(str(transform_data))
+    transform_dict = {}
+    for (index, value) in enumerate(transform_data):
+        most_imp = most_important(index)
+        transform_dict[most_imp] = list(value)
+    with open(f"./2d_tf_idf.json", mode='w', encoding="utf-8") as f1:
+        json.dump(transform_dict, f1)
 
-#clustering 1000 doc
+
+# clustering 1000 doc
 def clustering_tf_idf():
     words = []
     for document_name in range(0, 1000):
@@ -258,7 +269,7 @@ def clustering_tf_idf():
         words += [most]
     vectorizer = TfidfVectorizer()
     X = vectorizer.fit_transform(words)
-    most_important_cluster={}
+    most_important_cluster = {}
     num_clusters = 7
     model = KMeans(n_clusters=num_clusters)
     model.fit(X)
@@ -268,12 +279,56 @@ def clustering_tf_idf():
             most_important_cluster[word] = int(clusters[i])
 
     return most_important_cluster
-#save clustering of 1000 doc in json
+
+
+# save clustering of 1000 doc in json
 def save_most_important_cluster():
     most_important_cluster = clustering_tf_idf()
     print(most_important_cluster)
     with open(f"./most_important_clustering.json", "w") as myfile:
         json.dump(most_important_cluster, myfile)
 
-save_most_important_cluster()
+
+# read x and y of tf idf
+def read_2d_tf_idf():
+    with open("./2d_tf_idf.json") as fp:
+        all_2d = json.load(fp)
+        return all_2d
+
+
+# read clustering
+def read_clustering():
+    with open("./most_important_clustering.json") as fp:
+        all_clustering = json.load(fp)
+        return all_clustering
+
+
+# make x and y  for diagrom based on cluster
+def make_coordinate():
+    all_2d = read_2d_tf_idf()
+    all_clustering = read_clustering()
+    x = [None] * 7
+    y = [None] * 7
+    for key, value in list(all_2d.items()):
+        index = all_clustering[key]
+        if not x[index]:
+            x[index] = []
+        x[index].append(value[0])
+        if not y[index]:
+            y[index] = []
+        y[index].append(value[1])
+    return {'x': x, 'y': y}
+
+
+# draw diagram
+def draw_diagram():
+    coordinate = make_coordinate()
+    colors = ['y', 'r', 'g', 'b', 'purple', 'gray', 'black']
+
+    for i in range(7):
+        x = np.array(coordinate['x'][i])
+        y = np.array(coordinate['y'][i])
+        plt.scatter(x, y, s=80, facecolors='none', edgecolors=colors[i])
+
+    plt.show()
 
