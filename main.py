@@ -328,7 +328,8 @@ def draw_diagram():
     for i in range(7):
         x = np.array(coordinate['x'][i])
         y = np.array(coordinate['y'][i])
-        plt.scatter(x, y, s=80, facecolors='none', edgecolors=colors[i])
+        plt.scatter(x, y, s=120, facecolors='none', edgecolors=colors[i])
 
     plt.show()
 
+draw_diagram()
